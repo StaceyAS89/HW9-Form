@@ -1,0 +1,22 @@
+ul {
+  padding: 0;
+  width: 300px;
+}
+
+li {
+  height: 20px;
+  padding: 10px;
+  list-style-type: none;
+  background-color: #ffff00;
+}
+
+.task_is_done {
+  background-color: #00ff00;
+}
+.btn_remove_task {
+  float: right;
+}
+.error {
+  border: 3px red;
+  background-color: red;
+}
