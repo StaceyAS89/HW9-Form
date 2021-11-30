@@ -1,6 +1,6 @@
 const input = document.getElementById('inputTask');
-const button = document.getElementById('addBtn');
 const ul = document.getElementById('list');
+const form = document.getElementById('todo_form');
 
 function create(elementValue) {
     const li = document.createElement('li');
@@ -25,7 +25,6 @@ function checkInput() {
     }
 }
 input.addEventListener('input', function (event) {
-    checkInput()
     if (checkInput() === false) {
         input.classList.add('error');
     } else if (input.value.charAt(0) === ' ') {
@@ -36,16 +35,16 @@ input.addEventListener('input', function (event) {
 })
 
 
-button.addEventListener('click', function (event) {
+form.addEventListener('submit', function (event) {
     event.preventDefault();
     if (checkInput()) {
         create(input.value);
         input.value = '';
-    } else(checkInput() === false)
-    return false
+    }
 })
 
 ul.addEventListener('click', function (event) {
+    event.preventDefault();
 
     if (event.target.tagName === "LI") {
         event.target.classList.toggle('task_is_done')
@@ -53,5 +52,4 @@ ul.addEventListener('click', function (event) {
     if (event.target.tagName === "BUTTON") {
         event.target.closest('li').remove();
     }
-
 })

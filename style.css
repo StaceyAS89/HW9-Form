@@ -17,6 +17,6 @@ li {
   float: right;
 }
 .error {
-  border: 3px red;
-  background-color: red;
+  border: 3px solid red;
+  color: red;
 }
